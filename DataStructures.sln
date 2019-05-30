@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithm", "GraphAlgo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{9848A5CE-D974-4E6B-8AC3-D23DBDE3225A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkipList", "SkipList\SkipList.csproj", "{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9848A5CE-D974-4E6B-8AC3-D23DBDE3225A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9848A5CE-D974-4E6B-8AC3-D23DBDE3225A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9848A5CE-D974-4E6B-8AC3-D23DBDE3225A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
