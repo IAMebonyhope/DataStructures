@@ -22,11 +22,11 @@ namespace SkipList
 
         public override void insert(int key, T value)
         {
-            int x = getLevel();
-            Node<T> newNode = new Node<T>(key, value, x);
-            Node<T>[] updates = new Node<T>[MaxLevel];
+            
+            List<Node<T>> updates = new List<Node<T>>();
 
             Node<T> node = Head;
+
             for (int i = (MaxLevel - 1); i >= 0; i--)
             {
                 while ((node.Forwards[i] != null) && (node.Forwards[i].Key < key))
@@ -34,14 +34,31 @@ namespace SkipList
                     node = node.Forwards[i];
                 }
 
-                updates[i] = node;
+                updates.Add(node);
             }
+
+            int index = getIndex(node.Key) + 1;
+
+            int x = getLevel(index);
+            updateLevel(x);
+            Node<T> newNode = new Node<T>(key, value, x);
 
             for (int i = 0; i < x; i++)
             {
-                newNode.Forwards[i] = updates[i].Forwards[i];
-                updates[i].Forwards[i] = newNode;
+                if(i >= updates.Count)
+                {
+                    newNode.Forwards[i] = null;
+                    updates.Add(newNode);
+                }
+                else
+                {
+                    newNode.Forwards[i] = updates[i].Forwards[i];
+                    updates[i].Forwards[i] = newNode;
+                }
+                
             }
+
+            updateNodes(updates, newNode, index);
         }
 
         public override void delete(int key)
@@ -79,19 +96,72 @@ namespace SkipList
 
         }
 
-        private int getLevel()
+        private int getLevel(int index)
         {
-            Random rand = new Random();
-            double x = rand.NextDouble();
-            int level = 0;
+            double x = Math.Log((index + 1), 2);
 
-            while ((x > 0.5) && (level < MaxLevel))
+            if ((x*10)%10 != 0)
             {
-                x = rand.NextDouble();
-                level++;
+                return 1;
+            }
+            else
+            {
+                return (int)(x + 1);
+            }
+        }
+
+        private void updateLevel(int newLevel)
+        {
+            if(newLevel > MaxLevel)
+            {
+                Node<T> newHead = new Node<T>(Head.Key, Head.Value, newLevel);
+
+                for (int i = 0; i < MaxLevel; i++)
+                {
+                    newHead.Forwards[i] = Head.Forwards[i];
+                }
+                for (int i=MaxLevel; i<newLevel; i++)
+                {
+                    newHead.Forwards[i] = null;
+                }
+                Head = newHead;
+                MaxLevel = newLevel;
+            }
+        }
+
+        private void updateNodes(List<Node<T>> updates, Node<T> node, int index)
+        {
+            while(node.Forwards[0] != null)
+            {
+                
+
+                int x = getLevel(index);
+                updateLevel(x);
+                Node<T> newNode = new Node<T>(node.Key, node.Value, x);
+
+                for (int i = 0; i < x; i++)
+                {
+                    if (i >= updates.Count)
+                    {
+                        newNode.Forwards[i] = null;
+                        updates.Add(newNode);
+                    }
+                    else
+                    {
+                        newNode.Forwards[i] = updates[i].Forwards[i];
+                        updates[i].Forwards[i] = newNode;
+                        updates[i] = newNode;
+                    }
+
+                    
+                }
+
+                node = newNode;
+                index++;
             }
 
-            return level;
+            
+            
         }
     }
 }

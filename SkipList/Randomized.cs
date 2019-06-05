@@ -30,7 +30,7 @@ namespace SkipList
             Node<T> node = Head;
             for (int i = (MaxLevel - 1); i >= 0; i--)
             {
-                while ((node.Forwards[i] != null) && (node.Forwards[i].Key < key))
+                while ((node.Forwards[i] != null) && (node.Forwards[i].Key <= key))
                 {
                     node = node.Forwards[i];
                 }
@@ -38,11 +38,20 @@ namespace SkipList
                 updates[i] = node;
             }
 
-            for (int i = 0; i < x; i++)
-            { 
-                newNode.Forwards[i] = updates[i].Forwards[i];
-                updates[i].Forwards[i] = newNode; 
+            if(node.Key == key)
+            {
+                node.Value = value;
             }
+            else
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    newNode.Forwards[i] = updates[i].Forwards[i];
+                    updates[i].Forwards[i] = newNode;
+                }
+            }
+
+            
         }
 
         public override void delete(int key)
@@ -81,14 +90,14 @@ namespace SkipList
 
         private int getLevel()
         {
-            
+            Thread.Sleep(500);
             Random rand = new Random();
             double x = rand.NextDouble();
             int level = 1;
 
             while((x > 0.5) && (level < MaxLevel))
             {
-                Thread.Sleep(5000);
+                Thread.Sleep(500);
                 x = rand.NextDouble();
                 level++;
             }

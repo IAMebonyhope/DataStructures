@@ -48,21 +48,26 @@ namespace SkipList
         {
             int count = -1;
 
+            if(Head.Key == key)
+            {
+                return count;
+            }
+
             Node<T> node = Head;
 
             while (node.Forwards[0] != null)
             {
-                count++;
-
                 if (node.Forwards[0].Key == key)
                 {
-                    return count;
+                    count++;
+                    break;
                 }
-
+                count++;
                 node = node.Forwards[0];
                 
             }
 
+           
             return count;
         }
 
