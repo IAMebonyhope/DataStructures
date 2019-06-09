@@ -187,6 +187,56 @@ namespace LinkedList
             }
         }
 
+        public int getMiddle()
+        {
+            int count = 0;
+
+            Node node = Head;
+            while (node.Next != null)
+            {
+                node = node.Next;
+                count++;
+            }
+            //count++;
+
+            int aver;
+            if (count % 2 == 0)
+            {
+                aver = count / 2;
+                count = 0;
+
+                node = Head;
+                while (node.Next != null)
+                {
+                    if (count == aver)
+                    {
+                        return node.Data;
+                    }
+                    node = node.Next;
+                    count++;
+                }
+            }
+            else
+            {
+                aver = (int)Math.Floor((double)count / 2);
+
+                count = 0;
+
+                node = Head;
+                while (node.Next != null)
+                {
+                    if (count == aver)
+                    {
+                        return ((node.Data + node.Next.Data)/2);
+                    }
+                    node = node.Next;
+                    count++;
+                }
+            }
+
+            return -1;
+        }
+
         public void printList()
         {
             Node node = Head;

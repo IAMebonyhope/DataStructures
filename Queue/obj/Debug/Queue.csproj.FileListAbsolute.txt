@@ -1,0 +1,5 @@
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Queue\bin\Debug\Queue.exe.config
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Queue\bin\Debug\Queue.exe
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Queue\bin\Debug\Queue.pdb
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Queue\obj\Debug\Queue.exe
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Queue\obj\Debug\Queue.pdb

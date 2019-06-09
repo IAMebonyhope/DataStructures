@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkipList", "SkipList\SkipList.csproj", "{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "Queue\Queue.csproj", "{74EE8C71-DC89-4632-B5CB-90B56694C7AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8F827EA-9832-45CF-BD45-9FFBF3EFE8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EE8C71-DC89-4632-B5CB-90B56694C7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EE8C71-DC89-4632-B5CB-90B56694C7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EE8C71-DC89-4632-B5CB-90B56694C7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EE8C71-DC89-4632-B5CB-90B56694C7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

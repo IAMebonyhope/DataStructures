@@ -1,0 +1,6 @@
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\bin\Debug\Trees.exe.config
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\bin\Debug\Trees.exe
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\bin\Debug\Trees.pdb
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\obj\Debug\Trees.exe
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\obj\Debug\Trees.pdb
+C:\Users\HP\Documents\Visual Studio 2017\Projects\DataStructures\Trees\obj\Debug\Trees.csprojResolveAssemblyReference.cache
