@@ -239,5 +239,29 @@ namespace Trees
             PostOrder(root.Right);
             nodes.Add(root.Val);
         }
+
+        public int getMinuteAngle(int minute)
+        {
+            return 6 * minute;
+        }
+
+        public int getAngle(int hour, int minute)
+        {
+            int minuteHandAngle = getMinuteAngle(minute);
+            int hourStart = hour * 5;
+            int hourOffset = minute / 12;
+            int hourHand = hourStart + hourOffset;
+            int hourHandAngle = getMinuteAngle(hourHand);
+            int diff = Math.Abs(hourHandAngle - minuteHandAngle);
+
+            if (diff <= 180)
+            {
+                return diff;
+            }
+            else
+            {
+                return 360 - diff;
+            }
+        }
     }
 }
